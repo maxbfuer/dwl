@@ -4,3 +4,11 @@ dwl
 *-protocol.h
 .ccls-cache
 config.h
+
+# Nix build outputs
+result
+result-man
+
+# unwanted `patch` files
+.orig
+.rej
