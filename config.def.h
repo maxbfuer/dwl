@@ -125,15 +125,15 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 
 /* commands */
 static const char *term_cmd[] = { "foot", NULL };
-static const char *run_menu_cmd[] = { "kickoff", NULL };
-static const char *drun_menu_cmd[] = { "fuzzel", "-I", NULL };
+static const char *run_menu_cmd[] = { "tofi-run", NULL };
+static const char *drun_menu_cmd[] = { "tofi-drun", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                 function        argument */
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = term_cmd} },
-	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = run_menu_cmd} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,          spawn,          {.v = drun_menu_cmd} },
+	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = drun_menu_cmd} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,          spawn,          {.v = run_menu_cmd} },
 	{ MODKEY,                    XKB_KEY_b,          togglebar,      {0} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
