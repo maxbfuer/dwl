@@ -34,6 +34,9 @@
         xorg.libX11
         xorg.xcbutilwm
         xwayland
+        # bar patch deps
+        fcft
+        libdrm
       ];
 
       outputs = ["out" "man"];
