@@ -125,9 +125,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 
 /* commands */
 static const char *term_cmd[] = { "foot", NULL };
-/* tofi will just print the selection to stdout, so I need to exec */
 static const char *run_menu_cmd[] = { "dash", "-c", "$(tofi-run)", NULL };
-/* tofi is configured to exec in drun mode */
 static const char *drun_menu_cmd[] = { "dash", "-c", "$(tofi-drun)", NULL };
 
 static const Key keys[] = {
