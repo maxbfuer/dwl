@@ -147,7 +147,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_p,          spawn,          {.v = repo_menu_cmd} },
 
 	{ MODKEY,                    XKB_KEY_v,          spawn,          {.v = toggle_vm_cmd} },
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_V,          spawn,          {.v = shutdown_vm_cmd} },
+	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_v,          spawn,          {.v = shutdown_vm_cmd} },
 	{ MODKEY,                    XKB_KEY_b,          togglebar,      {0} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
