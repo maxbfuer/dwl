@@ -125,15 +125,29 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 
 /* commands */
 static const char *term_cmd[] = { "foot", NULL };
-static const char *run_menu_cmd[] = { "dash", "-c", "$(tofi-run)", NULL };
+static const char *browser_cmd[] = { "brave", NULL };
+static const char *private_browser_cmd[] = { "brave", "--incognito", NULL };
+
 static const char *drun_menu_cmd[] = { "dash", "-c", "$(tofi-drun)", NULL };
+static const char *run_menu_cmd[] = { "dash", "-c", "$(tofi-run)", NULL };
+static const char *repo_menu_cmd[] = { "repo_menu", NULL };
+
+static const char *toggle_vm_cmd[] = { "toggle_vm", NULL };
+static const char *shutdown_vm_cmd[] = { "shutdown_vm", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                 function        argument */
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = term_cmd} },
+	{ MODKEY,                    XKB_KEY_w,          spawn,          {.v = browser_cmd} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_W,          spawn,          {.v = private_browser_cmd} },
+
 	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = drun_menu_cmd} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,          spawn,          {.v = run_menu_cmd} },
+	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_p,          spawn,          {.v = repo_menu_cmd} },
+
+	{ MODKEY,                    XKB_KEY_v,          spawn,          {.v = toggle_vm_cmd} },
+	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_V,          spawn,          {.v = shutdown_vm_cmd} },
 	{ MODKEY,                    XKB_KEY_b,          togglebar,      {0} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
