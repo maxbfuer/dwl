@@ -1,3 +1,5 @@
+#include <X11/XF86keysym.h>
+
 /* Taken from https://github.com/djpohly/dwl/issues/466 */
 #define COLOR(hex)    { ((hex >> 24) & 0xFF) / 255.0f, \
                         ((hex >> 16) & 0xFF) / 255.0f, \
@@ -135,6 +137,10 @@ static const char *repo_menu_cmd[] = { "repo_menu", NULL };
 static const char *toggle_vm_cmd[] = { "toggle_vm", NULL };
 static const char *shutdown_vm_cmd[] = { "shutdown_vm", NULL };
 
+static const char *volume_mute_cmd[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
+static const char *volume_down_cmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "4%-", NULL };
+static const char *volume_up_cmd[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "4%+", NULL };
+
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                 function        argument */
@@ -148,6 +154,11 @@ static const Key keys[] = {
 
 	{ MODKEY,                    XKB_KEY_v,          spawn,          {.v = toggle_vm_cmd} },
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_v,          spawn,          {.v = shutdown_vm_cmd} },
+
+	{ 0,                  XF86XK_AudioMute,          spawn,          {.v = volume_mute_cmd } },
+	{ 0,           XF86XK_AudioLowerVolume,          spawn,          {.v = volume_down_cmd } },
+	{ 0,           XF86XK_AudioRaiseVolume,          spawn,          {.v = volume_up_cmd } },
+
 	{ MODKEY,                    XKB_KEY_b,          togglebar,      {0} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
 	{ MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
