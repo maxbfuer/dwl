@@ -127,8 +127,8 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 
 /* commands */
 static const char *term_cmd[] = { "foot", NULL };
-static const char *browser_cmd[] = { "brave", NULL };
-static const char *private_browser_cmd[] = { "brave", "--incognito", NULL };
+static const char *browser_cmd[] = { "chromium", NULL };
+static const char *private_browser_cmd[] = { "chromium", "--incognito", NULL };
 
 static const char *drun_menu_cmd[] = { "dash", "-c", "$(tofi-drun)", NULL };
 static const char *run_menu_cmd[] = { "dash", "-c", "$(tofi-run)", NULL };
