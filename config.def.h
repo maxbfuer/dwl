@@ -154,7 +154,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,          spawn,          {.v = run_menu_cmd} },
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_p,          spawn,          {.v = repo_menu_cmd} },
 
-	{ MODKEY,                    XKB_KEY_n,          spawn,          {.v = drun_menu_cmd} },
+	{ MODKEY,                    XKB_KEY_n,          spawn,          {.v = obsidian_cmd} },
 
 	{ MODKEY,                    XKB_KEY_v,          spawn,          {.v = toggle_vm_cmd} },
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_v,          spawn,          {.v = shutdown_vm_cmd} },
