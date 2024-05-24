@@ -135,6 +135,7 @@ static const char *run_menu_cmd[] = { "dash", "-c", "$(tofi-run)", NULL };
 static const char *repo_menu_cmd[] = { "repo_menu", NULL };
 
 static const char *obsidian_cmd[] = { "obsidian", NULL };
+static const char *lobe_chat_cmd[] = { "chromium", "--profile-directory=Default", "--app-id=okdkkkfkdbgdkmjnfbmfcabfogcibnko" };
 
 static const char *toggle_vm_cmd[] = { "toggle_vm", NULL };
 static const char *shutdown_vm_cmd[] = { "shutdown_vm", NULL };
@@ -155,6 +156,7 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_p,          spawn,          {.v = repo_menu_cmd} },
 
 	{ MODKEY,                    XKB_KEY_n,          spawn,          {.v = obsidian_cmd} },
+	{ MODKEY,                    XKB_KEY_c,          spawn,          {.v = lobe_chat_cmd} },
 
 	{ MODKEY,                    XKB_KEY_v,          spawn,          {.v = toggle_vm_cmd} },
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_v,          spawn,          {.v = shutdown_vm_cmd} },
