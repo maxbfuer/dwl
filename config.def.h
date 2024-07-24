@@ -135,7 +135,7 @@ static const char *run_menu_cmd[] = { "dash", "-c", "$(tofi-run)", NULL };
 static const char *repo_menu_cmd[] = { "repo_menu", NULL };
 
 static const char *obsidian_cmd[] = { "obsidian", NULL };
-static const char *llm_chat_cmd[] = { "foot", "chatgpt", NULL };
+static const char *llm_chat_cmd[] = { "chromium", "'http://localhost:3080/c/new'", "--new-window", NULL };
 
 static const char *toggle_vm_cmd[] = { "toggle_vm", NULL };
 static const char *shutdown_vm_cmd[] = { "shutdown_vm", NULL };
